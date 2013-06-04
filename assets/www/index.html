@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>My Journal</title>
+    </head>
+    <body>
+        <div class="_addEntryPage addEntryPage">
+        	<h1>Add Journal Entry</h1>
+        	<div>
+        		<b>Title</b><br />
+        		<input type="text" id="journalEntryTitle" />
+        	</div>
+        	<div>
+        		<b>Body</b><br />
+        		<textarea id="journalEntryBody" ></textarea>
+        	</div>
+        	<div class="_addEntry btn">Add Entry</div>
+        	<div class="_cancelEntry btn cancel">Cancel</div>
+        </div>
+        <div class="_entriesPage entriesPage active">
+        	<h1>My Journal</h1>
+        	<div class="_addEntry addEntry btn">+</div>
+	        <ul class="entries _entries">
+	        	<li class="loading">
+	        		<h2>Loading Journal...</h2>
+	        	</li>
+	        </ul>
+        </div>
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/parse-1.2.7.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

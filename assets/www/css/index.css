@@ -1,0 +1,140 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(255,255,255,0.25); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+h1 {
+    font-size:25px;
+    font-weight:normal;
+    margin:0;
+    overflow:visible;
+    padding:0;
+    text-align:center;
+}
+
+.entriesPage,
+.addEntryPage {
+	margin:10px;
+}
+
+ul.entries {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.entries li {
+	border-bottom: 1px solid #CCC;
+}
+
+ul.entries li.loading {
+	text-align:center;
+}
+
+ul.entries li:last-child {
+	border:none;
+}
+
+ul.entries li h2 {
+	margin-bottom:0;	
+}
+
+ul.entries li p {
+	margin: 5px 0 15px 0;
+	font-size:15px;
+}
+
+.created {
+	text-align:left;
+}
+
+.meta {
+	position:relative;
+	font-size:11px;	
+	text-transform:none;
+}
+
+.location {
+	text-align:right;
+	position: absolute;
+	right: 0px;
+	top: 0px;	
+}
+
+.btn {
+	margin: 10px 0;
+	line-height: 23px;
+	background-color: green;
+	text-align: center;
+	border: 1px solid #CCC;
+	color: #FFF;
+	padding: 5px;
+	font-size: 18px;
+	text-shadow: 1px 1px #333;
+}
+
+.cancel {
+	background-color: orange;
+}
+
+.entriesPage .addEntry {
+	position: absolute;
+	top: -5px;
+	right: 10px;
+	width: 23px;
+}
+
+.addEntryPage {
+	display:none;
+}
+
+input[type=text],
+textarea {
+	width: 98%;
+}
+
+textarea {
+	height:100px;
+}
