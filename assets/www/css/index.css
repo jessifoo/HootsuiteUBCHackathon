@@ -130,6 +130,11 @@ ul.entries li p {
 	display:none;
 }
 
+.mysteryGamePage, .loginPage, .regPage {
+	display:none;
+}
+
+
 input[type=text],
 textarea {
 	width: 98%;

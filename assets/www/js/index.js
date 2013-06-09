@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var currentuser;
 var geo = {};
 var app = {
     // Application Constructor
@@ -47,11 +48,17 @@ var app = {
         // test parse connectivity
         // app.testParse();
         
+        app.setUpStartPage();
+        
+        app.register();
+        
+        app.login();
+        
         // Query Parse for jounral entries
-        app.getJournalEntries();
+        //app.getJournalEntries();
         
         // hook up our UI events
-        app.initializeUI();
+        //app.initializeUI();
     },
     initializeGeo: function() {
     	// Throw an error if no update is received every 30 seconds
@@ -98,6 +105,217 @@ var app = {
     	  }
     	});
     },
+    
+    setUpStartPage: function(){
+    	var self = this,
+    	$mainPage = $("._mainPage"),
+    	$mysteryGamePage = $("._mysteryGamePage"),
+    	$loginPage = $("._loginPage"),
+    	$regPage = $("._regPage");
+    	
+    	$mainPage.find("._loginPageBtn").click(function(e){
+    		$mainPage.hide();
+    		$mysteryGamePage.hide();
+    		$regPage.hide();
+    		$loginPage.show();
+    	});
+    	
+    	$mainPage.find("._regPageBtn").click(function(e){
+    		$mainPage.hide();
+    		$mysteryGamePage.hide();
+    		$regPage.show();
+    		$loginPage.hide();
+    	});
+    	$regPage.find("._regPageBtn").click(function(e){
+
+    	});
+    	
+    	$loginPage.find("._loginPageBtn").click(function(e){
+
+    	});
+    	
+    	$mainPage.find("._viewGame").click(function(e) {
+    		$mainPage.hide();
+    		$mysteryGamePage.show();
+    	});
+    	$mysteryGamePage.find("._viewGame").click(function(e) {
+    		
+    	});
+    	
+    	$mysteryGamePage.find("._homePage").click(function(e) {
+    		$mainPage.show();
+    		$mysteryGamePage.hide();
+    	});
+    	$mainPage.find("._homePage").click(function(e) {
+    		
+    	});
+    },
+    
+    login: function(){
+    	var self = this,
+    	$loginPage = $("._loginPage");
+    	
+    	$loginPage.find("._loginSubmitBtn").click(function(e) {
+    	alert("button pressed");
+    	//get values
+        var username = $("#username").val();
+        var password = $("#password").val();
+ 
+        //do some basic validation here
+        var errors = "";
+        if(username === "") errors += "Username required.<br/>";
+        if(password === "") errors += "Password required.<br/>";
+ 
+        if(errors !== "") {
+            alert("Please enter a value");
+            return;
+        }
+ 
+        //$("#regstatus").html("<b>Logging in...</b>");
+ 
+        Parse.User.logIn(username, password, {
+            success:function(user) {
+                currentUser = user;
+                //cylon.loadPage("./notes.html");
+                app.loadGamePage();
+            },
+            error:function(user, error) {
+                console.log("ERROR!");
+                console.dir(error);
+                alert("Sorry, you couldn't be logged in");
+                //$("#loginstatus").html(error.message).addClass("errorDiv");
+            }
+        });
+    });
+    	
+    },
+    
+    register: function(){
+    	var self = this,
+    	$regPage = $("._regPage");
+    	
+    	$regPage.find("._regSubmitBtn").click(function(e) {
+    	
+    	var username = $("#usernameR").val();
+    	var password = $("#passwordR").val();
+    	var email = $("#emailR").val();
+    	
+    	//do some basic validation here
+        var errors = "";
+        if(username === "") errors += "Username required.<br/>";
+        if(password === "") errors += "Password required.<br/>";
+        if(email === "") errors += "Email required.<br/>";
+ 
+        if(errors !== "") {
+            //$("#regstatus").html(errors).addClass("errorDiv");
+            //return;
+        }
+    	
+      //try to register with Parse and see if it works.
+        var user = new Parse.User();
+        user.set("username", username);
+        user.set("password", password);
+        user.set("email", email);
+ 
+        //$("#regstatus").html("<b>Registering user...</b>");
+        
+	        user.signUp(null, {
+	            success:function(user) {
+	            	alert("registered user");
+	                currentUser = user;
+	                //cylon.loadPage("./notes.html");
+	            },
+	            error:function(user, error) {
+	                console.log("ERROR!");
+	                console.dir(error);
+	                $("#regstatus").html(error.message).addClass("errorDiv");
+	            }
+	        });
+        });
+    },
+    
+    resetPass: function() {
+    	var self = this;
+    	
+    	var email = $("#passwordResetEmail").val();
+    	 
+        if(email === "") return;
+ 
+        Parse.User.requestPasswordReset(email, {
+            success:function() {
+                alert("Reset instructions emailed to you.");
+            },
+            error:function(error) {
+                alert(error.message);
+            }
+        });
+    },
+    
+    loadGamePage: function(){
+    	var self = this,
+    	$loginPage = $("._loginPage"),
+    	$regPage = $("._regPage"),
+    	$gamePage = $("._gamePage");
+    
+    	$gamePage.find("._viewMysteryGame").click(function(e){
+    		//app.mysteryGame();
+    		app.startGame();
+    	});
+    },
+    
+    startGame: function(){
+    	var self = this;
+    	
+    	var game = new gameOb();
+    	game.set("creator",currentuser);
+    	game.setACL(new Parse.ACL(currentuser));
+    	game.set("gameLevel",1);
+    },
+    
+    mysteryGame: function(){
+    	var self = this;
+    	if(currentuser.isCurrent()){
+    		
+    		
+    	}else{
+    		alert("sorry, you're not logged in");
+    	}
+    },
+    
+    getMysteryGame: function() { 	
+    	var query = new Parse.Query(gameOb);
+        
+    	query.equalTo("creator", currentUser);
+        	
+        query.find({
+            success:function(gameLevel) {
+            	
+            }
+        });
+    },
+    
+    mysteryL1: function() {
+    	
+    },
+    
+    checkIn: function(){
+    	var self = this,
+    	$checkInPage = $("._checkInPage");
+    	
+    	var checkIn;
+    	
+    	$checkInPage.find("._checkInBtn").click(function(e){
+    		var link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius=300&types="+type+"&sensor=false&key=AIzaSyCI_9snF_gQSv5g7P39B5I9DNOJQYvyZpY;
+    		$(document).ready(function () {
+    			$.getJSON(link, function(data){
+    				if(data.results.size > 0){
+    					checkIn = true;
+    				}
+    			});
+    		});
+    	});
+    },
+    
     initializeUI: function() {
     	var self= this,
     	$enrtiesPage = $("._entriesPage"),
