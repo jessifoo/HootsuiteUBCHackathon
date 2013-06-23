@@ -29,6 +29,7 @@ public class HootApp extends DroidGap
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
+        super.setIntegerProperty("loadUrlTimeoutValue", 70000);
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
     }

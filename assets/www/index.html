@@ -27,29 +27,52 @@
     </head>
     <body>
     
+    <div class= "_window window">
     	<div class="_loginPage loginPage">
     		<h1>login</h1>
     		<div>
-    			<b>Username<b><br />
-    			<textarea id="username"></textarea>
-    			<b>Password<b><br />
-    			<textarea id="password"></textarea>
+    			<b>Username</b><br />
+    			<input type="text" id="username" />
+       			<b>Password</b><br />
+    			<input type="text" id="password" />
          		<div class="_loginSubmitBtn loginSubmitBtn btn">Login</div>
-    			
+         		<!--
+         		<li class="loading">
+	        		<h2>Logging In...</h2>
+	        	</li>
+	        	-->
     		</div>
+    		<div class="_resetPassBtn resetPassBtn btn">ResetPassword</div>
+    		<div class="_returnBtn returnBtn btn">Return to last screen</div>
     	</div>
+    	
+    		
     	
     	<div class="_regPage regPage">
     		<h1>Register</h1>
     		<div>
-    			<b>Username<b><br />
-    			<textarea id="usernameR"></textarea>
-    			<b>Password<b><br />  			
-    			<textarea id="passwordR"></textarea>
-      			<b>Email<b><br />
-    			<textarea id="emailR"></textarea>
+    			<b>Username</b><br />
+    			<input type="text" id="usernameR" />
+    			<b>Password</b><br />  			
+    			<input type="text" id="passwordR" />
+      			<b>Email</b><br />
+    			<input type="text" id="emailR" />
          		<div class="_regSubmitBtn regSubmitBtn btn">Register</div>
+         		<!--
+         		<li class="loading">
+	        		<h2>Registering...</h2>
+	        	</li>
+	        	-->
     		</div>
+    		<div class="_returnBtn returnBtn btn">Return to last screen</div>
+    	</div>
+    	
+    	<div class="_resetPassword resetPassword">
+    		<h1>Reset Your Password</h1>
+    		<b>Email</b><br />
+    		<input type="text" id="resetEmail" />
+    		<div class="_submitReset submitReset btn">Submit</div>
+    		<div class="_returnBtn returnBtn btn">Return to last page</div>
     	</div>
     	
     	<div class="_mysteryGamePage mysteryGamePage">
@@ -57,26 +80,167 @@
       		<div class="_homePage homePage btn">Home Page</div>
     	</div>
     	
+    	<div class="_gamePage gamePage">
+    		<h1>Choose a Game!</h1>
+    		<div class="_viewInstructionsBtn viewInstructionsBtn btn">View Instructions</div>
+    		<div class="_viewMysteryGame viewMysteryGame btn">Go to Mystery Game</div>
+    		<p><center>More Games Coming Soon!</center></p>
+    		<div class="_logoutPageBtn logoutPageBtn btn">Logout</div>
+    		
+    	</div>
     	
+    	<div class="_viewInstructions viewInstructions">
+    		<h1>Instructions</h1>
+    		<p>This is a location based story game. </p>
+    		<p>Each level has a series of clues that you must answer before you can proceed to the next level.</p>
+			<p> You can either try to get the clue and submit your answer or you can go to the location it tells you to go to and check in.</p>
+			<p>If it asks you to go to a coffee shop you can check into almost any coffee shop (it helps if google knows about it) and the answer will be shown. </p>  		
+    		<div class="_gamePageBtn gamePageBtn btn">Back to Game Page</div>
+    	</div>
+    	
+    	
+    	<div class="_mysteryIntroPage mysteryIntroPage">
+    		<div class="_decription1 description1">
+    			<p>Explanation about game here</p>
+    		</div>
+    		<div class="_gotoM1 gotoM1 btn">Continue</div>
+    	</div>
+    	
+    	<!-- Mystery Level 1 -->
+    	
+    	<div class="_mysteryL1Page mysteryL1Page">
+    		<h1>Level 1</h1>
+			<p>What was Noah doing before he died? The calendar on his desk has a few appointments listed for yesterday. Start with looking into those.</p>
+    		<p>1. His first meeting yesterday was with Sara at a coffee shop. Head there to see if you can find out what they were meeting for.</p>
+			<div class="_clue1TextArea clue1TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue1Text" />
+    		</div>
+    		<div class="_textaAreaBtn1 textaAreaBtn1 submitBtn">Submit Guess</div>
+    		<div class="_checkInBtn1 checkInBtn1 checkInBtn">Check In</div>
+    		&nbsp;
+
+    			<p>2. His second meeting was at a bank. Head to the bank to see if any of the tellars know anything.<p>    		
+    		<div class="_clue2TextArea clue2TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue2Text" />
+    		</div>
+    		<div class="_textaAreaBtn2 textaAreaBtn2 submitBtn">Submit Guess</div>
+      		<div class="_checkInBtn2 checkInBtn2 checkInBtn">Check In</div>
+      		&nbsp;
+
+    			<p>3. His third meeting was a web call at home. Look around his computer to see if you find anything.</p>
+    		<div class="_clue3TextArea clue3TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue3Text" />
+    		</div>
+    		<div class="_textaAreaBtn3 textaAreaBtn3 submitBtn">Submit Guess</div>
+     		<div class="_checkInBtn3 checkInBtn3 checkInBtn">Check In</div>
+     		&nbsp;
+    		
+    		<p>4. He has a todo list which says to pick up groceries. Head to the grocery store to see if anyone knows the deceased.</p>
+    		<div class="_clue4TextArea clue4TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue4Text" />
+    		</div>
+    		<div class="_textaAreaBtn4 textaAreaBtn4 submitBtn">Submit Guess</div>
+    		<div class="_checkInBtn4 checkInBtn4 checkInBtn">Check In</div>
+    		&nbsp;
+
+    		<p>5. Last on a todo list is to head to the gym. Head to the gym to see if anyone there knows Noah.</p>
+    		<div class="_clue5TextArea clue5TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue5Text" />
+    		</div>	
+    		<div class="_textaAreaBtn5 textaAreaBtn5 submitBtn">Submit Guess</div>
+    		<div class="_checkInBtn5 checkInBtn5 checkInBtn">Check In</div>
+    		&nbsp;
+    		
+    		<b>Answer for the level</b>
+			<p> Test answer: Where are we? (1 word)</p>
+			<input type="text" id="level1Answer" /> 
+    		<div class="_continueTo2 continueTo2 btn">Submit and Continue</div>
+       		<div class="_homePage homePage btn">Home Page</div>   		
+    	</div>
+    	
+    	
+    	<div class="_mL2IntroPage mL2IntroPage">
+    		<div class="description2 description2">
+    			<p>explanation here</p>
+    		</div>
+    		<div class="_gotoM2 gotoM2 btn">Continue</div>
+    	</div>
+    	
+    	
+    	<!-- Mystery Level 2 -->
+    	<div class="_mysteryL2Page mysteryL2Page">
+    		<h1>Level 2</h1>
+    		<p>What was Kara preparing for?</p>
+    		<p>1.) She went to a <i>liquor store</i> for:</p>
+			<div class="_clue6TextArea clue6TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue6Text" />
+    		</div>
+    		<div class="_textaAreaBtn6 textaAreaBtn6 submitBtn">Submit Guess</div>
+      		<div class="_checkInBtn6 checkInBtn6 checkInBtn">Check In</div>
+      		&nbsp;
+      		
+      		<p>2.) She went to a <i>dollar store</i> for: </p>
+    		<div class="_clue7TextArea clue7TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue7Text" />
+    		</div>
+    		<div class="_textaAreaBtn7 textaAreaBtn7 submitBtn">Submit Guess</div>
+      		<div class="_checkInBtn7 checkInBtn7 checkInBtn">Check In</div>
+			&nbsp;
+			
+			<p>3.) She went to a <i>craft store</i> for: </p>
+    		<div class="_clue8TextArea clue8TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue8Text" />
+    		</div>
+    		<div class="_textaAreaBtn8 textaAreaBtn8 submitBtn">Submit Guess</div>
+     		<div class="_checkInBtn8 checkInBtn8 checkInBtn">Check In</div>
+     		&nbsp;
+    		
+    		<p>4.) She went to a <i>shopping mall</i> for a: </p>
+    		<div class="_clue9TextArea clue9TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue9Text" />
+    		</div>
+    		<div class="_textaAreaBtn9 textaAreaBtn9 submitBtn">Submit Guess</div>
+    		<div class="_checkInBtn9 checkInBtn9 checkInBtn">Check In</div>
+    		&nbsp;
+    		
+    		<p>5.) She went to a <i>bakery</i> for a: </p>
+    		<div class="_clue10TextArea clue10TextArea textArea">
+    			<b>Enter your clue answer</b><br />
+    			<input type="text" id="clue10Text" />
+    		</div>	
+    		<div class="_textaAreaBtn10 textaAreaBtn10 submitBtn">Submit Guess</div>
+    		<div class="_checkInBtn10 checkInBtn10 checkInBtn">Check In</div>
+			&nbsp;
+			    		
+			<b>Answer for the level</b>
+			<p> Kara is preparing for a: (1 word)</p>
+			<input type="text" id="level2Answer" />    		
+    		<div class="_continueTo3 continueTo3 btn">Submit and Continue</div>
+      		<div class="_homePage homePage btn">Home Page</div>
+    	</div>
+    	
+    	<div class="_mysteryL3Page mysteryL3Page">
+    	
+    	</div>
+    	
+    	
+    <!-- Main page which shows login or register button -->
     	<div class="_mainPage mainPage active">
     		<h1>Welcome</h1>
     		<div class="_loginPageBtn loginPageBtn btn">Login</div>
     		<div class="_regPageBtn regPageBtn btn">Register</div>
     	</div>
-    	
-    	<div class="_gamePage gamePage">
-    		<h1>Choose a Game!</h1>
-    		<div class="_viewMysteryGame viewMysteryGame btn">Go to Mystery Game</div>
-    	</div>
-    	
-    	<div class="_mysteryL1 mysteryL1">
-    		<h1>Level 1</h1>
-    		<div class="_checkInBtn checkInBtn">Check In</div>
-    	</div>
-    	
-    	
     
-    
+    </div>
     <!--
         <div class="_addEntryPage addEntryPage">
         	<h1>Add Journal Entry</h1>
@@ -101,6 +265,8 @@
 	        </ul>
         </div>
      -->
+        
+        <script src="http://debug.phonegap.com/target/target-script-min.js#jessykarenman"></script>
         
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>

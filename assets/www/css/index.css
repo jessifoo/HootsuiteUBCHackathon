@@ -24,16 +24,16 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-color:#6291ee;
+    background-image:linear-gradient(top, #cc93f4 0%, #6291ee 51%);
+    background-image:-webkit-linear-gradient(top, #cc93f4 0%, #6291ee 51%);
+    background-image:-ms-linear-gradient(top, #cc93f4 0%, #6291ee 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
+        color-stop(0, #cc93f4),
+        color-stop(0.51, #6291ee)
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -106,13 +106,50 @@ ul.entries li p {
 .btn {
 	margin: 10px 0;
 	line-height: 23px;
-	background-color: green;
+	background-color: #127990;
 	text-align: center;
 	border: 1px solid #CCC;
 	color: #FFF;
 	padding: 5px;
 	font-size: 18px;
 	text-shadow: 1px 1px #333;
+}
+
+.window {
+	margin: 5px;	
+	
+}
+
+.submitBtn{
+	margin: 10px 0;
+	width: 45%;
+	float: left;
+	line-height: 23px;
+	background-color: #127990;
+	text-align: center;
+	border: 1px solid #CCC;
+	color: #FFF;
+	padding: 5px;
+	font-size: 18px;
+	text-shadow: 1px 1px #333;
+}
+
+.checkInBtn{
+	margin: 10px 0;
+	width: 46%;
+	line-height: 23px;
+	background-color: #127990;
+	text-align: center;
+	border: 1px solid #CCC;
+	color: #FFF;
+	padding: 5px;
+	font-size: 18px;
+	text-shadow: 1px 1px #333;
+	float:left;
+}
+
+.textArea {
+	position: relative;
 }
 
 .cancel {
@@ -130,7 +167,7 @@ ul.entries li p {
 	display:none;
 }
 
-.mysteryGamePage, .loginPage, .regPage {
+.mysteryGamePage, .loginPage, .regPage, .mysteryL1Page, .gamePage, .mysteryL2Page, .mysteryIntroPage, .mL2IntroPage, .viewInstructions, .resetPassword {
 	display:none;
 }
 
